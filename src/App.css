@@ -1,0 +1,48 @@
+/* Estilo general de la página */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #20232a;
+}
+
+/* Contenedor principal */
+.contenedor {
+  padding: 30px;
+  text-align: center;
+}
+
+/* Título */
+h1 {
+  color: white;
+}
+
+/* Organizamos las tarjetas */
+.tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Diseño de cada tarjeta */
+.tarjeta {
+  width: 250px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Imagen del personaje */
+.tarjeta img {
+  width: 100%;
+}
+
+/* Nombre */
+.tarjeta h2 {
+  color: #333;
+}
+
+/* Información */
+.tarjeta p {
+  color: #555;
+}
