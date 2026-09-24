@@ -2,23 +2,23 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function App() {
-  // guardamos personajes
+  // Guardamos los personajes
   const [personajes, setPersonajes] = useState([]);
 
-  // 
+  // Controlamos si la información está cargando
   const [cargando, setCargando] = useState(true);
 
-  // guardamos un posible error
+  // Guardamos un posible error
   const [error, setError] = useState(null);
 
-  
+  // Se ejecuta cuando carga el componente
   useEffect(() => {
 
-    // hacemos la petición a la API
+    // Hacemos la petición a la API
     axios
       .get('https://rickandmortyapi.com/api/character')
 
-      // si la petición funciona
+      // Si la petición funciona
       .then((respuesta) => {
         setPersonajes(respuesta.data.results);
         setCargando(false);
@@ -32,10 +32,10 @@ function App() {
 
   }, []);
 
-  // mostramos mensaje mientras carga
+  // Mostramos mensaje mientras carga
   if (cargando) return <p>Cargando personajes...</p>;
 
-  // mostramos mensaje si hay error
+  // Mostramos mensaje si hay error
   if (error) return <p>{error}</p>;
 
   return (
@@ -47,18 +47,19 @@ function App() {
         {personajes.map((personaje) => (
           <div className="tarjeta" key={personaje.id}>
 
-            
+            {/* Mostramos la imagen */}
             <img
               src={personaje.image}
               alt={personaje.name}
             />
 
+            {/* Mostramos el nombre */}
             <h2>{personaje.name}</h2>
 
-            
+            {/* Mostramos el estado */}
             <p>Estado: {personaje.status}</p>
 
-            
+            {/* Mostramos la especie */}
             <p>Especie: {personaje.species}</p>
 
           </div>
